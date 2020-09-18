@@ -1,0 +1,16 @@
+PODS:
+  - JeweledKit (0.1.7)
+
+DEPENDENCIES:
+  - JeweledKit
+
+SPEC REPOS:
+  https://github.com/cool-jeweled-moon/JeweledPodspec.git:
+    - JeweledKit
+
+SPEC CHECKSUMS:
+  JeweledKit: c587634258bcc81cbad5724c247ff142e8a0926c
+
+PODFILE CHECKSUM: 52f0b705cd22d70b76bf089e5e1ad2c1249985e1
+
+COCOAPODS: 1.9.3
