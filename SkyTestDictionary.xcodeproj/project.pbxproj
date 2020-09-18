@@ -3,121 +3,122 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41C32F083EDA06936A966D5A /* Pods_SkyTestDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BB59912B0D719440E8FC2F /* Pods_SkyTestDictionary.framework */; };
-		A1D0FA1F2514D43F008AC3F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D0FA1E2514D43F008AC3F2 /* AppDelegate.swift */; };
-		A1D0FA282514D442008AC3F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D0FA272514D442008AC3F2 /* Assets.xcassets */; };
-		A1D0FA2B2514D442008AC3F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D0FA292514D442008AC3F2 /* LaunchScreen.storyboard */; };
+		4B9B7505C0D81CECA16F9CE2 /* Pods_SkyTestDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6BA836EE28A664653AC3A4 /* Pods_SkyTestDictionary.framework */; };
+		A11F2B022514F54100F3E941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F2B012514F54100F3E941 /* AppDelegate.swift */; };
+		A11F2B0B2514F54300F3E941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A11F2B0A2514F54300F3E941 /* Assets.xcassets */; };
+		A11F2B0E2514F54300F3E941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A11F2B0C2514F54300F3E941 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05C6A9899F04D089D31604EA /* Pods-SkyTestDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyTestDictionary.release.xcconfig"; path = "Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary.release.xcconfig"; sourceTree = "<group>"; };
-		54BB59912B0D719440E8FC2F /* Pods_SkyTestDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyTestDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		74D69781C16D8148707774C5 /* Pods-SkyTestDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyTestDictionary.debug.xcconfig"; path = "Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary.debug.xcconfig"; sourceTree = "<group>"; };
-		A1D0FA1B2514D43F008AC3F2 /* SkyTestDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyTestDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1D0FA1E2514D43F008AC3F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1D0FA272514D442008AC3F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A1D0FA2A2514D442008AC3F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A1D0FA2C2514D442008AC3F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A6BA836EE28A664653AC3A4 /* Pods_SkyTestDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyTestDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A11F2AFE2514F54100F3E941 /* SkyTestDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyTestDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A11F2B012514F54100F3E941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A11F2B0A2514F54300F3E941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A11F2B0D2514F54300F3E941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A11F2B0F2514F54300F3E941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6E69012EF3CC48B2D1F75C2 /* Pods-SkyTestDictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyTestDictionary.release.xcconfig"; path = "Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary.release.xcconfig"; sourceTree = "<group>"; };
+		DB8A91B9DFBE04495AC90E42 /* Pods-SkyTestDictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyTestDictionary.debug.xcconfig"; path = "Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A1D0FA182514D43F008AC3F2 /* Frameworks */ = {
+		A11F2AFB2514F54100F3E941 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41C32F083EDA06936A966D5A /* Pods_SkyTestDictionary.framework in Frameworks */,
+				4B9B7505C0D81CECA16F9CE2 /* Pods_SkyTestDictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		64CD5A30485049FCFEDE0934 /* Pods */ = {
+		029B36C3F1C036DC42EF3F6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				74D69781C16D8148707774C5 /* Pods-SkyTestDictionary.debug.xcconfig */,
-				05C6A9899F04D089D31604EA /* Pods-SkyTestDictionary.release.xcconfig */,
+				8A6BA836EE28A664653AC3A4 /* Pods_SkyTestDictionary.framework */,
 			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11182345C75E16C1EB9F69C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB8A91B9DFBE04495AC90E42 /* Pods-SkyTestDictionary.debug.xcconfig */,
+				B6E69012EF3CC48B2D1F75C2 /* Pods-SkyTestDictionary.release.xcconfig */,
+			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A1D0FA122514D43F008AC3F2 = {
+		A11F2AF52514F54100F3E941 = {
 			isa = PBXGroup;
 			children = (
-				A1D0FA1D2514D43F008AC3F2 /* SkyTestDictionary */,
-				A1D0FA1C2514D43F008AC3F2 /* Products */,
-				64CD5A30485049FCFEDE0934 /* Pods */,
-				FBF5E09B2CCA04CCA1312AD8 /* Frameworks */,
+				A11F2B002514F54100F3E941 /* SkyTestDictionary */,
+				A11F2AFF2514F54100F3E941 /* Products */,
+				11182345C75E16C1EB9F69C2 /* Pods */,
+				029B36C3F1C036DC42EF3F6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		A1D0FA1C2514D43F008AC3F2 /* Products */ = {
+		A11F2AFF2514F54100F3E941 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1D0FA1B2514D43F008AC3F2 /* SkyTestDictionary.app */,
+				A11F2AFE2514F54100F3E941 /* SkyTestDictionary.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A1D0FA1D2514D43F008AC3F2 /* SkyTestDictionary */ = {
+		A11F2B002514F54100F3E941 /* SkyTestDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				A1D0FA1E2514D43F008AC3F2 /* AppDelegate.swift */,
-				A1D0FA332514D67C008AC3F2 /* UI */,
-				A1D0FA322514D678008AC3F2 /* Core */,
-				A1D0FA342514D682008AC3F2 /* Resources */,
-				A1D0FA2C2514D442008AC3F2 /* Info.plist */,
+				A11F2B012514F54100F3E941 /* AppDelegate.swift */,
+				A11F2B192514F5DE00F3E941 /* UI */,
+				A11F2B1A2514F5E100F3E941 /* Core */,
+				A11F2B182514F5CF00F3E941 /* Resources */,
+				A11F2B0F2514F54300F3E941 /* Info.plist */,
 			);
 			path = SkyTestDictionary;
 			sourceTree = "<group>";
 		};
-		A1D0FA322514D678008AC3F2 /* Core */ = {
+		A11F2B182514F5CF00F3E941 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A11F2B0A2514F54300F3E941 /* Assets.xcassets */,
+				A11F2B0C2514F54300F3E941 /* LaunchScreen.storyboard */,
 			);
-			path = Core;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		A1D0FA332514D67C008AC3F2 /* UI */ = {
+		A11F2B192514F5DE00F3E941 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		A1D0FA342514D682008AC3F2 /* Resources */ = {
+		A11F2B1A2514F5E100F3E941 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A1D0FA272514D442008AC3F2 /* Assets.xcassets */,
-				A1D0FA292514D442008AC3F2 /* LaunchScreen.storyboard */,
 			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FBF5E09B2CCA04CCA1312AD8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				54BB59912B0D719440E8FC2F /* Pods_SkyTestDictionary.framework */,
-			);
-			name = Frameworks;
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1D0FA1A2514D43F008AC3F2 /* SkyTestDictionary */ = {
+		A11F2AFD2514F54100F3E941 /* SkyTestDictionary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1D0FA2F2514D442008AC3F2 /* Build configuration list for PBXNativeTarget "SkyTestDictionary" */;
+			buildConfigurationList = A11F2B122514F54300F3E941 /* Build configuration list for PBXNativeTarget "SkyTestDictionary" */;
 			buildPhases = (
-				4D59A8A63430A9026EDCE6EE /* [CP] Check Pods Manifest.lock */,
-				A1D0FA172514D43F008AC3F2 /* Sources */,
-				A1D0FA182514D43F008AC3F2 /* Frameworks */,
-				A1D0FA192514D43F008AC3F2 /* Resources */,
-				35355BC169440A708C172EF7 /* [CP] Embed Pods Frameworks */,
+				482D509FFEDE91CED105DC81 /* [CP] Check Pods Manifest.lock */,
+				A11F2AFA2514F54100F3E941 /* Sources */,
+				A11F2AFB2514F54100F3E941 /* Frameworks */,
+				A11F2AFC2514F54100F3E941 /* Resources */,
+				E91FAE81131D24DD6B28D143 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,25 +126,24 @@
 			);
 			name = SkyTestDictionary;
 			productName = SkyTestDictionary;
-			productReference = A1D0FA1B2514D43F008AC3F2 /* SkyTestDictionary.app */;
+			productReference = A11F2AFE2514F54100F3E941 /* SkyTestDictionary.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A1D0FA132514D43F008AC3F2 /* Project object */ = {
+		A11F2AF62514F54100F3E941 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
-				ORGANIZATIONNAME = aneli.bob;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					A1D0FA1A2514D43F008AC3F2 = {
-						CreatedOnToolsVersion = 11.7;
+					A11F2AFD2514F54100F3E941 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
-			buildConfigurationList = A1D0FA162514D43F008AC3F2 /* Build configuration list for PBXProject "SkyTestDictionary" */;
+			buildConfigurationList = A11F2AF92514F54100F3E941 /* Build configuration list for PBXProject "SkyTestDictionary" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,47 +151,30 @@
 				en,
 				Base,
 			);
-			mainGroup = A1D0FA122514D43F008AC3F2;
-			productRefGroup = A1D0FA1C2514D43F008AC3F2 /* Products */;
+			mainGroup = A11F2AF52514F54100F3E941;
+			productRefGroup = A11F2AFF2514F54100F3E941 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1D0FA1A2514D43F008AC3F2 /* SkyTestDictionary */,
+				A11F2AFD2514F54100F3E941 /* SkyTestDictionary */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A1D0FA192514D43F008AC3F2 /* Resources */ = {
+		A11F2AFC2514F54100F3E941 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1D0FA2B2514D442008AC3F2 /* LaunchScreen.storyboard in Resources */,
-				A1D0FA282514D442008AC3F2 /* Assets.xcassets in Resources */,
+				A11F2B0E2514F54300F3E941 /* LaunchScreen.storyboard in Resources */,
+				A11F2B0B2514F54300F3E941 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		35355BC169440A708C172EF7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D59A8A63430A9026EDCE6EE /* [CP] Check Pods Manifest.lock */ = {
+		482D509FFEDE91CED105DC81 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,24 +196,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E91FAE81131D24DD6B28D143 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkyTestDictionary/Pods-SkyTestDictionary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A1D0FA172514D43F008AC3F2 /* Sources */ = {
+		A11F2AFA2514F54100F3E941 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1D0FA1F2514D43F008AC3F2 /* AppDelegate.swift in Sources */,
+				A11F2B022514F54100F3E941 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A1D0FA292514D442008AC3F2 /* LaunchScreen.storyboard */ = {
+		A11F2B0C2514F54300F3E941 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A1D0FA2A2514D442008AC3F2 /* Base */,
+				A11F2B0D2514F54300F3E941 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A1D0FA2D2514D442008AC3F2 /* Debug */ = {
+		A11F2B102514F54300F3E941 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,6 +264,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -288,7 +289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -298,7 +299,7 @@
 			};
 			name = Debug;
 		};
-		A1D0FA2E2514D442008AC3F2 /* Release */ = {
+		A11F2B112514F54300F3E941 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -324,6 +325,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -342,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -352,11 +354,12 @@
 			};
 			name = Release;
 		};
-		A1D0FA302514D442008AC3F2 /* Debug */ = {
+		A11F2B132514F54300F3E941 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74D69781C16D8148707774C5 /* Pods-SkyTestDictionary.debug.xcconfig */;
+			baseConfigurationReference = DB8A91B9DFBE04495AC90E42 /* Pods-SkyTestDictionary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P5D78F426N;
 				INFOPLIST_FILE = SkyTestDictionary/Info.plist;
@@ -371,11 +374,12 @@
 			};
 			name = Debug;
 		};
-		A1D0FA312514D442008AC3F2 /* Release */ = {
+		A11F2B142514F54300F3E941 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05C6A9899F04D089D31604EA /* Pods-SkyTestDictionary.release.xcconfig */;
+			baseConfigurationReference = B6E69012EF3CC48B2D1F75C2 /* Pods-SkyTestDictionary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P5D78F426N;
 				INFOPLIST_FILE = SkyTestDictionary/Info.plist;
@@ -393,25 +397,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1D0FA162514D43F008AC3F2 /* Build configuration list for PBXProject "SkyTestDictionary" */ = {
+		A11F2AF92514F54100F3E941 /* Build configuration list for PBXProject "SkyTestDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1D0FA2D2514D442008AC3F2 /* Debug */,
-				A1D0FA2E2514D442008AC3F2 /* Release */,
+				A11F2B102514F54300F3E941 /* Debug */,
+				A11F2B112514F54300F3E941 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1D0FA2F2514D442008AC3F2 /* Build configuration list for PBXNativeTarget "SkyTestDictionary" */ = {
+		A11F2B122514F54300F3E941 /* Build configuration list for PBXNativeTarget "SkyTestDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1D0FA302514D442008AC3F2 /* Debug */,
-				A1D0FA312514D442008AC3F2 /* Release */,
+				A11F2B132514F54300F3E941 /* Debug */,
+				A11F2B142514F54300F3E941 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A1D0FA132514D43F008AC3F2 /* Project object */;
+	rootObject = A11F2AF62514F54100F3E941 /* Project object */;
 }
