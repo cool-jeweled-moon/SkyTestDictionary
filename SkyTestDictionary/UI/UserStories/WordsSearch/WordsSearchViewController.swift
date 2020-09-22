@@ -16,10 +16,14 @@ private enum Constants {
 
 class WordsSearchViewController: UIViewController {
     
-    private let tableContainer =
-        JeweledPaginationTableViewController(dataSource: WordsSearchDataSource(),
-                                             configuration: JeweledPaginationTableViewConfiguration())
     private let searchBar = UISearchBar()
+    private let tableContainer: JeweledPaginationTableViewController<WordsSearchDataSource> = {
+        var configuration = JeweledPaginationTableViewConfiguration()
+        configuration.emptyDataSourceMessage = nil
+        
+        return JeweledPaginationTableViewController(dataSource: WordsSearchDataSource(),
+                                                    configuration: configuration)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +35,11 @@ class WordsSearchViewController: UIViewController {
     private func setupUI() {
         view.addSubview(searchBar)
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        searchBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        searchBar.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        if #available(iOS 11.0, *) {
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            searchBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+            searchBar.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        }
         
         addChild(tableContainer)
         view.addSubview(tableContainer.view)
@@ -46,10 +52,12 @@ class WordsSearchViewController: UIViewController {
     }
     
     private func configureUI() {
-//        tableContainer.tableView.keyboardDismissMode = .onDrag
+        tableContainer.tableView.keyboardDismissMode = .onDrag
         
         title = Constants.title
-        navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
         searchBar.delegate = tableContainer
     }
 }

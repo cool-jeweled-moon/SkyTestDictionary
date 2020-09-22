@@ -16,7 +16,7 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
     
     typealias Cell = WordCell
     
-    var configurationModels = [Cell.ConfigurationModel]()
+    var cellModels = [CellType]()
     
     private let requestLoader = JeweledRequestLoader(errorParser: ErrorParser())
     
@@ -26,27 +26,30 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
     private var currentTask: URLSessionDataTask?
     private var currentSearchText: String?
     
-    func loadData(searchText: String?, completion: @escaping (Error?) -> Void) {
+    func loadData(searchText: String?, updateUI: @escaping (Error?) -> Void) {
         guard currentSearchText == searchText else {
-            refresh(searchText: searchText, completion: completion)
+            refresh(searchText: searchText, updateUI: updateUI)
             return
         }
         
-        let page = configurationModels.count / Constants.pageSize + 1
-        loadData(page: page, searchText: searchText, completion: completion)
+        let page = cellModels.count / Constants.pageSize + 1
+        loadData(page: page, searchText: searchText, updateUI: updateUI)
     }
     
-    func refresh(searchText: String?, completion: @escaping (Error?) -> Void) {
+    func refresh(searchText: String?, updateUI: @escaping (Error?) -> Void) {
         currentSearchText = searchText
         currentTask?.cancel()
         isLoading = false
         isLoaded = false
-        loadData(page: 1, searchText: searchText, completion: completion)
+        loadData(page: 1, searchText: searchText, updateUI: updateUI)
     }
     
-    private func loadData(page: Int, searchText: String?, completion: @escaping (Error?) -> Void) {
-        guard !isLoading, !isLoaded, let searchText = searchText else {
-            completion(nil)
+    private func loadData(page: Int, searchText: String?, updateUI: @escaping (Error?) -> Void) {
+        guard !isLoading, !isLoaded else { return }
+        guard let searchText = searchText, !searchText.isEmpty else {
+            cellModels = [CellType.loader(model: LoaderCell.ConfigurationModel(message: "Example: Dog",
+                                                                               isMessage: true))]
+            updateUI(nil)
             return
         }
         
@@ -58,24 +61,37 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
                                          pageSize: Constants.pageSize)
         
         currentTask = requestLoader.loadModels(request) { [weak self] result in
-            switch result {
-            case .success(let words):
-                self?.updateFlags(with: words.count)
-                let models = words.map { $0.configurationModel }
-                self?.updateConfigurationModels(with: models, isFirstPage: isFirstPage) 
-                
-                completion(nil)
-            case .failure(let error):
-                completion(error)
-            }
+            self?.handleResult(result, isFirstPage: isFirstPage, updateUI: updateUI)
         }
     }
     
-    private func updateConfigurationModels(with models: [Cell.ConfigurationModel], isFirstPage: Bool) {
-        if isFirstPage {
-            configurationModels = models
-        } else {
-            configurationModels.append(contentsOf: models)
+    private func handleResult(_ result: Result<[Word], Error>, isFirstPage: Bool, updateUI: @escaping (Error?) -> Void) {
+        switch result {
+        case .success(let models):
+            updateFlags(with: models.count)
+            
+            var cellModels = models.map { CellType.cell(model: $0.configurationModel) }
+            if !isLoaded {
+                cellModels.append(CellType.loader(model: LoaderCell.ConfigurationModel()))
+            }
+            
+            if isFirstPage {
+                self.cellModels = cellModels
+            } else {
+                self.cellModels = self.cellModels.filter({
+                    if case .loader = $0 {
+                        return false
+                    }
+                    
+                    return true
+                })
+                
+                self.cellModels.append(contentsOf: cellModels)
+            }
+            
+            updateUI(nil)
+        case .failure(let error):
+            updateUI(error)
         }
     }
     
@@ -94,9 +110,9 @@ private extension Word {
             transcription = "\\\(meaningTranscription)\\"
         }
         
-        var previewUrl: String? = nil
+        var previewUrl: URL? = nil
         if let previewUrlString = meaning?.previewUrl {
-            previewUrl = "https:\(previewUrlString)"
+            previewUrl = URL(string: "https:\(previewUrlString)")
         }
         
         return WordCell.ConfigurationModel(word: text,
