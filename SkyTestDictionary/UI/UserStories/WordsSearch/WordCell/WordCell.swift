@@ -19,7 +19,7 @@ class WordCell: UITableViewCell, JeweledConfigurableView {
         let word: String
         let transcription: String?
         let translation: String?
-        let imageUrl: URL?
+        let imageUrl: String?
     }
     
     @IBOutlet weak var wordImageView: UIImageView!
@@ -45,11 +45,7 @@ class WordCell: UITableViewCell, JeweledConfigurableView {
         wordLabel.text = model.word.capitalizedFirstLetter
         transcriptionLabel.text = model.transcription
         translationLabel.text = model.translation?.capitalizedFirstLetter
-        
-        if let imageUrl = model.imageUrl {
-            let resource = ImageResource(downloadURL: imageUrl, cacheKey: imageUrl.absoluteString)
-            imageTask = wordImageView.kf.setImage(with: resource)
-        }
+        wordImageView.setImage(model.imageUrl)
         wordImageView.isHidden = model.imageUrl == nil
     }
 }

@@ -59,21 +59,23 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
         
         currentTask = requestLoader.loadModels(request) { [weak self] result in
             switch result {
-            case .success(let models):
-                
-                self?.updateFlags(with: models.count)
-                
-                let confgiruationModels = models.map { $0.configurationModel }
-                if isFirstPage {
-                    self?.configurationModels = confgiruationModels
-                } else {
-                    self?.configurationModels.append(contentsOf: confgiruationModels)
-                }
+            case .success(let words):
+                self?.updateFlags(with: words.count)
+                let models = words.map { $0.configurationModel }
+                self?.updateConfigurationModels(with: models, isFirstPage: isFirstPage) 
                 
                 completion(nil)
             case .failure(let error):
                 completion(error)
             }
+        }
+    }
+    
+    private func updateConfigurationModels(with models: [Cell.ConfigurationModel], isFirstPage: Bool) {
+        if isFirstPage {
+            configurationModels = models
+        } else {
+            configurationModels.append(contentsOf: models)
         }
     }
     
@@ -92,9 +94,9 @@ private extension Word {
             transcription = "\\\(meaningTranscription)\\"
         }
         
-        var previewUrl: URL? = nil
+        var previewUrl: String? = nil
         if let previewUrlString = meaning?.previewUrl {
-            previewUrl = URL(string: "https:\(previewUrlString)")
+            previewUrl = "https:\(previewUrlString)"
         }
         
         return WordCell.ConfigurationModel(word: text,
