@@ -110,9 +110,9 @@ private extension Word {
             transcription = "\\\(meaningTranscription)\\"
         }
         
-        var previewUrl: URL? = nil
+        var previewUrl: String? = nil
         if let previewUrlString = meaning?.previewUrl {
-            previewUrl = URL(string: "https:\(previewUrlString)")
+            previewUrl = "https:\(previewUrlString)"
         }
         
         return WordCell.ConfigurationModel(word: text,
