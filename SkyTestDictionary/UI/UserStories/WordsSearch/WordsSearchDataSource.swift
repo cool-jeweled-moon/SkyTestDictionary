@@ -16,6 +16,7 @@ private enum Constants {
 class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
     
     typealias Cell = WordCell
+    typealias LoaderCell = JeweledLockLoaderTableViewCell
     
     var cellModels = [CellType]()
     
