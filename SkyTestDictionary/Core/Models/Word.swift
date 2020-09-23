@@ -8,6 +8,13 @@
 import Foundation
 
 class Word: Codable {
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case text
+        case shortMeanings = "meanings"
+    }
+    
     let id: Int
     let text: String
     let shortMeanings: [MeaningShort]

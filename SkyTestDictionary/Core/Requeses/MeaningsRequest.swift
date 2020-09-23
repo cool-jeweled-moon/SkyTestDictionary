@@ -18,6 +18,10 @@ class MeaningsRequest: BaseRequest, JeweledModelRequest {
         self.ids = ids
     }
     
+    override var path: String {
+        return "meanings"
+    }
+    
     override var parameters: [String : String?] {
         let idsString = ids.map { String($0) }.joined(separator: ",")
         

@@ -18,6 +18,14 @@ class MainCoordinator: JeweledCoordinator {
     }
     
     func start() {
-        navigationController.push(WordsSearchViewController(), animated: true)
+        let controller = WordsSearchViewController()
+        controller.coordinator = self
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func wordDetails(word: Word) {
+        let controller = WordDetailsViewController(word: word)
+        controller.coordinator = self
+        navigationController.pushViewController(controller, animated: true)
     }
 }

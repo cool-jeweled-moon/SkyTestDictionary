@@ -29,17 +29,17 @@ enum PartOfSpeech: String {
 struct Meaning: Codable {
     let id: String
     let wordId: Int
-    let difficultyLevel: Int
+    let difficultyLevel: Int?
     let partOfSpeechCode: String
     let prefix: String
     let text: String
     let soundUrl: String
     let transcription: String
-    let updatedAt: Date
-    let mnemonics: String
+    let updatedAt: String
+    let mnemonics: String?
     let translation: Translation
     let images: [Image]
-    let definition: [Sound]
+    let definition: Sound
     let examples: [Sound]
     let meaningsWithSimilarTranslation: [MeaningWithSimilarTranslation]
     let alternativeTranslations: [AlternativeTranslation]

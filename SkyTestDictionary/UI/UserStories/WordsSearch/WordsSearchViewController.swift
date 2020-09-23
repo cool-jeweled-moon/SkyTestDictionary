@@ -16,6 +16,8 @@ private enum Constants {
 
 class WordsSearchViewController: UIViewController {
     
+    weak var coordinator: MainCoordinator?
+    
     private let searchBar = UISearchBar()
     private let tableContainer: JeweledPaginationTableViewController<WordsSearchDataSource> = {
         var configuration = JeweledPaginationTableViewConfiguration()
@@ -53,6 +55,9 @@ class WordsSearchViewController: UIViewController {
         searchBar.placeholder = Constants.searchBarPlaceholder
 //        searchBar.searchTextField.returnKeyType = .done
         tableContainer.tableView.keyboardDismissMode = .onDrag
+        tableContainer.selectionActionBlock = { [weak self] model, _ in
+            self?.coordinator?.wordDetails(word: model)
+        }
         
         title = Constants.title
         navigationController?.navigationBar.prefersLargeTitles = true

@@ -17,8 +17,10 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
     
     typealias Cell = WordCell
     typealias LoaderCell = JeweledLockLoaderTableViewCell
+    typealias Model = Word
     
     var cellModels = [CellType]()
+    var models = [Word]()
     
     private let requestLoader = JeweledRequestLoader(errorParser: ErrorParser())
     
@@ -86,6 +88,7 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
             
             if isFirstPage {
                 self.cellModels = cellModels
+                self.models = models
             } else {
                 self.cellModels = self.cellModels.filter({
                     if case .loader = $0 {
@@ -96,6 +99,7 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
                 })
                 
                 self.cellModels.append(contentsOf: cellModels)
+                self.models.append(contentsOf: models)
             }
             
             updateUI(nil)
