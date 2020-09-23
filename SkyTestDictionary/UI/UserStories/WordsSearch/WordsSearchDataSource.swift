@@ -10,6 +10,7 @@ import JeweledKit
 
 private enum Constants {
     static let pageSize = 20
+    static let exampleText = "Например: Dog"
 }
 
 class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
@@ -47,10 +48,15 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
     private func loadData(page: Int, searchText: String?, updateUI: @escaping (Error?) -> Void) {
         guard !isLoading, !isLoaded else { return }
         guard let searchText = searchText, !searchText.isEmpty else {
-            cellModels = [CellType.loader(model: LoaderCell.ConfigurationModel(message: "Example: Dog",
+            cellModels = [CellType.loader(model: LoaderCell.ConfigurationModel(message: Constants.exampleText,
                                                                                isMessage: true))]
             updateUI(nil)
             return
+        }
+        
+        if cellModels.count < Constants.pageSize {
+            cellModels = [CellType.loader(model: LoaderCell.ConfigurationModel())]
+            updateUI(nil)
         }
         
         isLoading = true
@@ -65,7 +71,9 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
         }
     }
     
-    private func handleResult(_ result: Result<[Word], Error>, isFirstPage: Bool, updateUI: @escaping (Error?) -> Void) {
+    private func handleResult(_ result: Result<[Word], Error>,
+                              isFirstPage: Bool,
+                              updateUI: @escaping (Error?) -> Void) {
         switch result {
         case .success(let models):
             updateFlags(with: models.count)
@@ -103,7 +111,7 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
 
 private extension Word {
     var configurationModel: WordCell.ConfigurationModel {
-        let meaning = meanings.first
+        let meaning = shortMeanings.first
         
         var transcription: String? = nil
         if let meaningTranscription = meaning?.transcription {

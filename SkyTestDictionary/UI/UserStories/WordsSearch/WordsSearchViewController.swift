@@ -35,11 +35,9 @@ class WordsSearchViewController: UIViewController {
     private func setupUI() {
         view.addSubview(searchBar)
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        if #available(iOS 11.0, *) {
-            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-            searchBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-            searchBar.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
-        }
+        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        searchBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        searchBar.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         
         addChild(tableContainer)
         view.addSubview(tableContainer.view)
@@ -52,12 +50,12 @@ class WordsSearchViewController: UIViewController {
     }
     
     private func configureUI() {
+        searchBar.placeholder = Constants.searchBarPlaceholder
+//        searchBar.searchTextField.returnKeyType = .done
         tableContainer.tableView.keyboardDismissMode = .onDrag
         
         title = Constants.title
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
         searchBar.delegate = tableContainer
     }
 }

@@ -7,10 +7,19 @@
 
 import Foundation
 
-struct Word: Codable {
+class Word: Codable {
     let id: Int
     let text: String
-    let meanings: [MeaningShort]
+    let shortMeanings: [MeaningShort]
+    var meanings: [Meaning]?
+    
+    init(id: Int,
+         text: String,
+         shortMeanings: [MeaningShort]) {
+        self.id = id
+        self.text = text
+        self.shortMeanings = shortMeanings
+    }
 }
 
 struct MeaningShort: Codable {

@@ -22,6 +22,8 @@
 		A12791AF251AB1AF009F76CD /* WordsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12791A9251AB1AF009F76CD /* WordsSearchRequest.swift */; };
 		A12791B0251AB1AF009F76CD /* MeaningsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12791AA251AB1AF009F76CD /* MeaningsRequest.swift */; };
 		A12791BF251AB4B9009F76CD /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12791BE251AB4B9009F76CD /* UIImageView+Kingfisher.swift */; };
+		A12791C3251B304C009F76CD /* WordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12791C2251B304C009F76CD /* WordDetailsViewController.swift */; };
+		A12791C7251B365A009F76CD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12791C6251B365A009F76CD /* MainCoordinator.swift */; };
 		CAC6F3964594926D01B9A69E /* Pods_SkyTestDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24697EDEDCD950E7FDECE70 /* Pods_SkyTestDictionary.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		A12791A9251AB1AF009F76CD /* WordsSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsSearchRequest.swift; sourceTree = "<group>"; };
 		A12791AA251AB1AF009F76CD /* MeaningsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeaningsRequest.swift; sourceTree = "<group>"; };
 		A12791BE251AB4B9009F76CD /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		A12791C2251B304C009F76CD /* WordDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordDetailsViewController.swift; path = ../../../../../JeweledKit/JeweledKit/Classes/UI/Protocols/WordDetailsViewController.swift; sourceTree = "<group>"; };
+		A12791C6251B365A009F76CD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = ../../../../JeweledKit/JeweledKit/Classes/UI/Protocols/MainCoordinator.swift; sourceTree = "<group>"; };
 		F24697EDEDCD950E7FDECE70 /* Pods_SkyTestDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyTestDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,8 +132,9 @@
 		A127916E251AB0CB009F76CD /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A12791BD251AB4B9009F76CD /* Extensions */,
+				A12791C5251B364C009F76CD /* Coordinators */,
 				A127916F251AB0CB009F76CD /* UserStories */,
+				A12791BD251AB4B9009F76CD /* Extensions */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 		A1279170251AB0CB009F76CD /* WordDetails */ = {
 			isa = PBXGroup;
 			children = (
+				A12791C2251B304C009F76CD /* WordDetailsViewController.swift */,
 			);
 			path = WordDetails;
 			sourceTree = "<group>";
@@ -204,6 +210,14 @@
 				A12791BE251AB4B9009F76CD /* UIImageView+Kingfisher.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A12791C5251B364C009F76CD /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A12791C6251B365A009F76CD /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A12791BF251AB4B9009F76CD /* UIImageView+Kingfisher.swift in Sources */,
+				A12791C7251B365A009F76CD /* MainCoordinator.swift in Sources */,
 				A1279186251AB0CB009F76CD /* WordsSearchDataSource.swift in Sources */,
 				A12791AD251AB1AF009F76CD /* Word.swift in Sources */,
 				A12791AB251AB1AF009F76CD /* ErrorParser.swift in Sources */,
@@ -329,6 +344,7 @@
 				A1279182251AB0CB009F76CD /* String+Capitalization.swift in Sources */,
 				A1279185251AB0CB009F76CD /* WordsSearchViewController.swift in Sources */,
 				A12791AC251AB1AF009F76CD /* Meaning.swift in Sources */,
+				A12791C3251B304C009F76CD /* WordDetailsViewController.swift in Sources */,
 				A11F2B022514F54100F3E941 /* AppDelegate.swift in Sources */,
 				A12791AE251AB1AF009F76CD /* BaseRequest.swift in Sources */,
 				A12791AF251AB1AF009F76CD /* WordsSearchRequest.swift in Sources */,
