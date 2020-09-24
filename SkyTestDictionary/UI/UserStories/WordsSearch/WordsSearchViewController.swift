@@ -19,19 +19,27 @@ class WordsSearchViewController: UIViewController {
     weak var coordinator: MainCoordinator?
     
     private let searchBar = UISearchBar()
-    private let tableContainer: JeweledPaginationTableViewController<WordsSearchDataSource> = {
-        var configuration = JeweledPaginationTableViewConfiguration()
-        configuration.emptyDataSourceMessage = nil
-        
-        return JeweledPaginationTableViewController(dataSource: WordsSearchDataSource(),
-                                                    configuration: configuration)
-    }()
+    private let tableContainer = JeweledPaginationTableViewController(dataSource: WordsSearchDataSource())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         configureUI()
+    }
+    
+    private func configureUI() {
+        title = Constants.title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        searchBar.delegate = tableContainer
+        searchBar.backgroundImage = UIImage()
+        searchBar.placeholder = Constants.searchBarPlaceholder
+        
+        tableContainer.tableView.keyboardDismissMode = .onDrag
+        tableContainer.selectionActionBlock = { [weak self] model, _ in
+            self?.coordinator?.wordDetails(word: model)
+        }
     }
     
     private func setupUI() {
@@ -49,17 +57,5 @@ class WordsSearchViewController: UIViewController {
         tableContainer.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableContainer.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableContainer.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-    }
-    
-    private func configureUI() {
-        title = Constants.title
-        navigationController?.navigationBar.prefersLargeTitles = true
-        searchBar.delegate = tableContainer
-        
-        searchBar.placeholder = Constants.searchBarPlaceholder
-        tableContainer.tableView.keyboardDismissMode = .onDrag
-        tableContainer.selectionActionBlock = { [weak self] model, _ in
-            self?.coordinator?.wordDetails(word: model)
-        }
     }
 }

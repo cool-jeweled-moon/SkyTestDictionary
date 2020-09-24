@@ -38,13 +38,12 @@ class WordDetailsViewController: UIViewController {
         
         setupUI()
         configureUI()
-        
-        titleView.speakerButton.addTarget(self, action: #selector(speakerButtonDidTap), for: .touchUpInside)
     }
     
     private func configureUI() {
         navigationItem.largeTitleDisplayMode = .never
         titleView.configure(with: word.configurationModel)
+        titleView.speakerButton.addTarget(self, action: #selector(speakerButtonDidTap), for: .touchUpInside)
     }
     
     private func setupUI() {
