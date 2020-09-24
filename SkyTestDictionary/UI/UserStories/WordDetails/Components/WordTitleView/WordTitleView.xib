@@ -26,7 +26,7 @@
                                 <constraint firstAttribute="height" constant="44" id="b4O-B7-fvl"/>
                             </constraints>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="speaker.3.fill" catalog="system"/>
+                            <state key="normal" image="speaker.wave.3.fill" catalog="system"/>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XG8-Xa-KJY">
                             <rect key="frame" x="52" y="0.0" width="322" height="54.5"/>
@@ -70,7 +70,7 @@
         </view>
     </objects>
     <resources>
-        <image name="speaker.3.fill" catalog="system" width="128" height="86"/>
+        <image name="speaker.wave.3.fill" catalog="system" width="128" height="86"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
