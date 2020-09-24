@@ -52,15 +52,14 @@ class WordsSearchViewController: UIViewController {
     }
     
     private func configureUI() {
+        title = Constants.title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        searchBar.delegate = tableContainer
+        
         searchBar.placeholder = Constants.searchBarPlaceholder
-//        searchBar.searchTextField.returnKeyType = .done
         tableContainer.tableView.keyboardDismissMode = .onDrag
         tableContainer.selectionActionBlock = { [weak self] model, _ in
             self?.coordinator?.wordDetails(word: model)
         }
-        
-        title = Constants.title
-        navigationController?.navigationBar.prefersLargeTitles = true
-        searchBar.delegate = tableContainer
     }
 }

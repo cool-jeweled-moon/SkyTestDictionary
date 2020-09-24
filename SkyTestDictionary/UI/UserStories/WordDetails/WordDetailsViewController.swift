@@ -12,10 +12,13 @@ class WordDetailsViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
     
-    private let stackScrollView = JeweledStackScrollView()
+    private let stackScrollView = JeweledStackScrollView.fromNib()
+    private let titleView = WordTitleView.fromNib()
     private lazy var meaningsContainer = WordMeaningsViewController(meanings: word.shortMeanings)
     
-    private let requestLoader = JeweledRequestLoader(errorParser: ErrorParser())
+    private let player = SimpleAudioPlayer()
+    
+    private let soundLoader = ServiceLocator.shared.soundLoader()
     
     private let word: Word
     
@@ -31,6 +34,20 @@ class WordDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
+        
+        setupUI()
+        configureUI()
+        
+        titleView.speakerButton.addTarget(self, action: #selector(speakerButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func configureUI() {
+        navigationItem.largeTitleDisplayMode = .never
+        titleView.configure(with: word.configurationModel)
+    }
+    
+    private func setupUI() {
         view.addSubview(stackScrollView)
         stackScrollView.translatesAutoresizingMaskIntoConstraints = false
         stackScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -38,18 +55,36 @@ class WordDetailsViewController: UIViewController {
         stackScrollView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         stackScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
+        stackScrollView.addView(titleView)
         stackScrollView.placeController(meaningsContainer)
+    }
+    
+    @objc private func speakerButtonDidTap() {
+        guard let soundUrl = word.shortMeanings.first?.soundUrl.appendingNetworkProtocol else { return }
         
-        navigationItem.largeTitleDisplayMode = .never
-        
-        let request = MeaningsRequest(ids: word.shortMeanings.map { $0.id })
-        requestLoader.loadModels(request) { result in
-            switch result {
-            case .success(let meanings):
-                self.word.meanings = meanings
-            case .failure(let error):
-                print(error)
+        titleView.state = .soundLoading
+        soundLoader.downloadSoundIfNeeded(withLink: soundUrl) { resourceUrl in
+            DispatchQueue.main.asyncIfNeeded {
+                self.titleView.state = resourceUrl == nil ? .soundLoadingFailed : .soundLoaded
+                if let resourceUrl = resourceUrl {
+                    self.player.play(url: resourceUrl)
+                }
             }
         }
+    }
+}
+
+private extension Word {
+    var configurationModel: WordTitleView.ConfigurationModel {
+        let meaning = shortMeanings.first
+        
+        var transcription: String? = nil
+        if let meaningTranscription = meaning?.transcription {
+            transcription = "\\\(meaningTranscription)\\"
+        }
+        
+        return WordTitleView.ConfigurationModel(title: text.capitalizedFirstLetter,
+                                                subtitle: transcription,
+                                                state: meaning?.soundUrl == nil ? .soundLoadingFailed : .soundLoaded)
     }
 }

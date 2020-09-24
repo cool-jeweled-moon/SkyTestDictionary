@@ -10,7 +10,7 @@ import JeweledKit
 
 class WordMeaningsViewController: UIViewController {
     
-    private let tableContainer = JeweledSimpleTableViewController<WordCell>()
+    private let tableContainer = JeweledSimpleTableViewController<TSDICell>()
     
     private let meanings: [MeaningShort]
     
@@ -26,6 +26,15 @@ class WordMeaningsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if meanings.isEmpty {
+            view.isHidden = true
+        } else {
+            setupTableContainer()
+            tableContainer.dataSource = meanings.map { $0.confgiruationModel }
+        }
+    }
+    
+    private func setupTableContainer() {
         addChild(tableContainer)
         view.addSubview(tableContainer.view)
         tableContainer.didMove(toParent: self)
@@ -38,10 +47,10 @@ class WordMeaningsViewController: UIViewController {
 }
 
 private extension MeaningShort {
-    var confgiruationModel: WordCell.ConfigurationModel {
-        return WordCell.ConfigurationModel(word: translation.text,
-                                           transcription: transcription,
-                                           translation: nil,
-                                           imageUrl: "https:\(previewUrl)")
+    var confgiruationModel: TSDICell.ConfigurationModel {
+        return TSDICell.ConfigurationModel(title: translation.text,
+                                           subtitle: partOfSpeech.title,
+                                           description: nil,
+                                           imageUrl: previewUrl.appendingNetworkProtocol)
     }
 }

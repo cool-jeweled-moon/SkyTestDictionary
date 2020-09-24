@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bnI-vx-qUU" customClass="WordTitleView" customModule="SkyTestDictionary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="141.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ufI-Ft-toU">
+                    <rect key="frame" x="20" y="20" width="44" height="44"/>
+                </activityIndicatorView>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jv5-SU-vK0">
+                    <rect key="frame" x="20" y="20" width="374" height="101.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFU-cj-iVV">
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="I1C-Vj-IzL"/>
+                                <constraint firstAttribute="height" constant="44" id="b4O-B7-fvl"/>
+                            </constraints>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="speaker.3.fill" catalog="system"/>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XG8-Xa-KJY">
+                            <rect key="frame" x="52" y="0.0" width="322" height="54.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-mS-GNq">
+                                    <rect key="frame" x="0.0" y="0.0" width="322" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKZ-nr-3j7">
+                                    <rect key="frame" x="0.0" y="29" width="322" height="25.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ufI-Ft-toU" firstAttribute="bottom" secondItem="jFU-cj-iVV" secondAttribute="bottom" id="GrC-dq-t3o"/>
+                <constraint firstItem="jv5-SU-vK0" firstAttribute="leading" secondItem="bnI-vx-qUU" secondAttribute="leading" constant="20" id="M11-UJ-JhD"/>
+                <constraint firstAttribute="bottom" secondItem="jv5-SU-vK0" secondAttribute="bottom" constant="20" id="PAX-hC-pAc"/>
+                <constraint firstAttribute="trailing" secondItem="jv5-SU-vK0" secondAttribute="trailing" constant="20" id="Qoi-0n-EEE"/>
+                <constraint firstItem="ufI-Ft-toU" firstAttribute="top" secondItem="jFU-cj-iVV" secondAttribute="top" id="XDp-gC-JaP"/>
+                <constraint firstItem="jv5-SU-vK0" firstAttribute="top" secondItem="bnI-vx-qUU" secondAttribute="top" constant="20" id="Xj3-vH-tvi"/>
+                <constraint firstItem="ufI-Ft-toU" firstAttribute="trailing" secondItem="jFU-cj-iVV" secondAttribute="trailing" id="cxe-Lp-QXi"/>
+                <constraint firstItem="ufI-Ft-toU" firstAttribute="leading" secondItem="jFU-cj-iVV" secondAttribute="leading" id="lcG-Pn-1Sg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activityIndicator" destination="ufI-Ft-toU" id="JRo-Ot-HbE"/>
+                <outlet property="speakerButton" destination="jFU-cj-iVV" id="y4T-Eh-mz0"/>
+                <outlet property="subtitleLabel" destination="YKZ-nr-3j7" id="3Aw-n1-HQx"/>
+                <outlet property="titleLabel" destination="vw7-mS-GNq" id="09C-Gk-BGL"/>
+            </connections>
+            <point key="canvasLocation" x="250.72463768115944" y="439.28571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="speaker.3.fill" catalog="system" width="128" height="86"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

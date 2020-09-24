@@ -12,3 +12,9 @@ extension String {
         return prefix(1).capitalized + dropFirst()
     }
 }
+
+extension String {
+    var appendingNetworkProtocol: String {
+        return "https:\(self)"
+    }
+}

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="466" id="c50-cZ-fJx" customClass="WordCell" customModule="SkyTestDictionary" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="466" id="c50-cZ-fJx" customClass="TSDICell" customModule="SkyTestDictionary" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="508"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c50-cZ-fJx" id="vBR-fb-BMj">
@@ -32,20 +32,20 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flocci­nauci­nihili­pili­fication" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0pd-qC-pqx">
                                         <rect key="frame" x="0.0" y="0.0" width="296" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ˌflɒksɪˌnɔːsɪˌnɪhɪlɪˌpɪlɪfɪˈkeɪʃ(ə)n/" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="MZo-3w-ufE">
                                         <rect key="frame" x="0.0" y="26" width="296" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DW-XI-apG">
                                         <rect key="frame" x="0.0" y="47.5" width="296" height="406"/>
                                         <string key="text">Именно здесь вырабатывается та критическая масса, сверх которой товар становится гипертоваром, а культура - гиперкультурой - то есть связанной более не с определенной торговлей или определенными потребностями, но с неким универсумом общего рейтинга, или замкнутой цепью, по которой пробегает импульс от отрезка к отрезку, - непрерывный транзит возможностей выбора, прочтений, референций, обозначений, расшифровок.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -63,10 +63,10 @@
             </tableViewCellContentView>
             <inset key="separatorInset" minX="102" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
-                <outlet property="transcriptionLabel" destination="MZo-3w-ufE" id="l89-Sh-ZHC"/>
-                <outlet property="translationLabel" destination="9DW-XI-apG" id="QQg-29-Na3"/>
-                <outlet property="wordImageView" destination="wci-cP-vq6" id="SYM-xL-ziY"/>
-                <outlet property="wordLabel" destination="0pd-qC-pqx" id="iez-Ri-DqZ"/>
+                <outlet property="descriptionLabel" destination="9DW-XI-apG" id="hd9-2z-3ZX"/>
+                <outlet property="largeImageView" destination="wci-cP-vq6" id="t6q-f6-v2p"/>
+                <outlet property="subtitleLabel" destination="MZo-3w-ufE" id="Q2I-at-ZBg"/>
+                <outlet property="titleLabel" destination="0pd-qC-pqx" id="CRj-K4-M4D"/>
             </connections>
             <point key="canvasLocation" x="105.79710144927537" y="208.92857142857142"/>
         </tableViewCell>

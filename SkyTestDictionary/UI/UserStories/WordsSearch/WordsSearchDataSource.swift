@@ -11,18 +11,19 @@ import JeweledKit
 private enum Constants {
     static let pageSize = 20
     static let exampleText = "Например: Dog"
+    static let notFoundText = "Ничего не найдено"
 }
 
 class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
     
-    typealias Cell = WordCell
+    typealias Cell = TSDICell
     typealias LoaderCell = JeweledLockLoaderTableViewCell
     typealias Model = Word
     
     var cellModels = [CellType]()
     var models = [Word]()
     
-    private let requestLoader = JeweledRequestLoader(errorParser: ErrorParser())
+    private let requestLoader = ServiceLocator.shared.requestLoader()
     
     private var isLoading = false
     private var isLoaded = false
@@ -84,6 +85,9 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
             var cellModels = models.map { CellType.cell(model: $0.configurationModel) }
             if !isLoaded {
                 cellModels.append(CellType.loader(model: LoaderCell.ConfigurationModel()))
+            } else if models.isEmpty {
+                cellModels.append(CellType.loader(model: LoaderCell.ConfigurationModel(message: Constants.notFoundText,
+                                                                                       isMessage: true)))
             }
             
             if isFirstPage {
@@ -104,7 +108,13 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
             
             updateUI(nil)
         case .failure(let error):
-            updateUI(error)
+            if cellModels.count < Constants.pageSize {
+                cellModels = [CellType.loader(model: LoaderCell.ConfigurationModel(message: error.localizedDescription,
+                                                                                   isMessage: true))]
+                updateUI(nil)
+            } else {
+                updateUI(error)
+            }
         }
     }
     
@@ -115,7 +125,7 @@ class WordsSearchDataSource: JeweledPaginationTableViewDataSource {
 }
 
 private extension Word {
-    var configurationModel: WordCell.ConfigurationModel {
+    var configurationModel: TSDICell.ConfigurationModel {
         let meaning = shortMeanings.first
         
         var transcription: String? = nil
@@ -125,12 +135,12 @@ private extension Word {
         
         var previewUrl: String? = nil
         if let previewUrlString = meaning?.previewUrl {
-            previewUrl = "https:\(previewUrlString)"
+            previewUrl = previewUrlString
         }
         
-        return WordCell.ConfigurationModel(word: text,
-                                           transcription: transcription,
-                                           translation: meaning?.translation.text,
-                                           imageUrl: previewUrl)
+        return TSDICell.ConfigurationModel(title: text.capitalizedFirstLetter,
+                                           subtitle: transcription,
+                                           description: meaning?.translation.text.capitalizedFirstLetter,
+                                           imageUrl: previewUrl?.appendingNetworkProtocol)
     }
 }

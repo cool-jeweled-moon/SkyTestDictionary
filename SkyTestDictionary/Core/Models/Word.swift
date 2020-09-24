@@ -30,10 +30,21 @@ class Word: Codable {
 }
 
 struct MeaningShort: Codable {
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case translation
+        case transcription
+        case partOfSpeech = "partOfSpeechCode"
+        case previewUrl
+        case imageUrl
+        case soundUrl
+    }
+    
     let id: Int
     let translation: Translation
     let transcription: String
-    let partOfSpeechCode: String
+    let partOfSpeech: PartOfSpeech
     let previewUrl: String
     let imageUrl: String
     let soundUrl: String
