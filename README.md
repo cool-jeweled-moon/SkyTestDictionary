@@ -16,4 +16,4 @@ pod install
 
 ### JeweledKit
 - Библиотека собственных наработок для работы с сетью, CoreData, готовыми UI компонентами и утилитами
-- Исходный код в качестве примера моего кода можно посмотреть здесь: [JeweledKit](https://https://github.com/cool-jeweled-moon/JeweledKit)
+- Исходный код в качестве примера моего кода можно посмотреть здесь: [JeweledKit](https://github.com/cool-jeweled-moon/JeweledKit)
